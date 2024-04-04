@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: '/order',
         routes: {
           '/': (context) => LoginPage(),
           '/register': (context) => RegisterPage(),
