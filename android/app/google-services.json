@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "892381183823",
+    "project_id": "luccelo-7be9f",
+    "storage_bucket": "luccelo-7be9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892381183823:android:53d2cabdaf0172700a8f3a",
+        "android_client_info": {
+          "package_name": "com.example.luccelo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGN6sC2ucwb_38GciB9yGo7rK8atCOfu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

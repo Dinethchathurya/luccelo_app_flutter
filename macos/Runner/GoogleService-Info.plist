@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAhaq7neJgKsWMT_Np0dTIdvJfUZer61FY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>892381183823</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.lucceloApp.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>luccelo-7be9f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>luccelo-7be9f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:892381183823:ios:d848e36c2fd6d5410a8f3a</string>
+</dict>
+</plist>
