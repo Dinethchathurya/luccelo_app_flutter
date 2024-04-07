@@ -8,6 +8,7 @@ import 'package:luccelo_app/myapp/screen/main_page.dart';
 import 'package:luccelo_app/myapp/screen/product_list.dart';
 
 import 'firebase_options.dart';
+import 'myapp/screen/cart_page.dart';
 import 'myapp/screen/home.dart';
 import 'myapp/screen/oder_page.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
             shadow: Color(0xFF2291fd),
           ),
         ),
-        initialRoute: '/productList',
+        initialRoute: '/cartPage',
         routes: {
           '/': (context) => LoginPage(),
           '/register': (context) => RegisterPage(),
@@ -48,6 +49,8 @@ class MyApp extends StatelessWidget {
           '/samplePage': (context) => SampleHomePage(),
           '/homePage': (context) => HomePage(),
           '/productList': (context) => ProductList(),
+          '/cartPage': (context) => CartPage(),
+
         },
       ),
     );

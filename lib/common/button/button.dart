@@ -12,12 +12,14 @@ class SubmitButton extends StatelessWidget {
     return SizedBox(
       width: mediaqueryWidth * .8,
       child: ElevatedButton(
+
         //elevated button is a type of a buttons.Icreate common button can use everywhere
         style: ElevatedButton.styleFrom(
           //style button
           backgroundColor: const Color.fromARGB(255, 253, 176, 138),
           shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+              borderRadius: BorderRadius.all(Radius.circular(50))),
+
         ),
         onPressed: onTap,
         child: Text(

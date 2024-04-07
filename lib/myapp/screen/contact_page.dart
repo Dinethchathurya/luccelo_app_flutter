@@ -21,6 +21,7 @@ class ContactUsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
+
       body: SingleChildScrollView(
         child: CircularDesignContainer(
           pageTitle: 'Contact Us',
