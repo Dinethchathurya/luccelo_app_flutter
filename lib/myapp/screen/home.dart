@@ -20,13 +20,16 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.02),
@@ -72,15 +75,24 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
+                            GestureDetector(
+                              onTap: (){},
+                              child: Container(
+                                decoration: BoxDecoration(
                                   color: Colors.yellow,
                                   borderRadius: BorderRadius.circular(100),
-
+                                ),
+                                height: 40,
+                                width: 120,
+                                child: Center(
+                                    child: Text(
+                                  'View',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                )),
                               ),
-                              height: 40,
-                              width: 120,
-                              child: Center(child: Text('View', style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w500),)),
                             )
                           ],
                         ),
@@ -90,7 +102,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -140,15 +153,24 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius: BorderRadius.circular(100),
-
+                            GestureDetector(
+                              onTap: (){},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.yellow,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                height: 40,
+                                width: 120,
+                                child: Center(
+                                    child: Text(
+                                  'View',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                )),
                               ),
-                              height: 40,
-                              width: 120,
-                              child: Center(child: Text('View', style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w500),)),
                             )
                           ],
                         ),
@@ -158,7 +180,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -211,15 +234,24 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius: BorderRadius.circular(100),
-
+                            GestureDetector(
+                              onTap: (){},
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.yellow,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                height: 40,
+                                width: 120,
+                                child: Center(
+                                    child: Text(
+                                  'View',
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                )),
                               ),
-                              height: 40,
-                              width: 120,
-                              child: Center(child: Text('View', style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w500),)),
                             )
                           ],
                         ),
@@ -228,7 +260,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
             ],
           ),
         ),

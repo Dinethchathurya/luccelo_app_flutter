@@ -5,6 +5,7 @@ import 'package:luccelo_app/myapp/screen/authentication/login_page.dart';
 import 'package:luccelo_app/myapp/screen/authentication/register_page.dart';
 import 'package:luccelo_app/myapp/screen/contact_page.dart';
 import 'package:luccelo_app/myapp/screen/main_page.dart';
+import 'package:luccelo_app/myapp/screen/product_list.dart';
 
 import 'firebase_options.dart';
 import 'myapp/screen/home.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
             shadow: Color(0xFF2291fd),
           ),
         ),
-        initialRoute: '/homePage',
+        initialRoute: '/productList',
         routes: {
           '/': (context) => LoginPage(),
           '/register': (context) => RegisterPage(),
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           '/order': (context) => OrderPage(),
           '/samplePage': (context) => SampleHomePage(),
           '/homePage': (context) => HomePage(),
+          '/productList': (context) => ProductList(),
         },
       ),
     );
