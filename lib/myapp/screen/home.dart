@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: MyAppBar(),
+        child: MyAppBar(name: 'Luccelo',),
       ),
       drawer: MyDrawer(),
       body: SafeArea(
@@ -112,7 +112,8 @@ class HomePage extends StatelessWidget {
                                             color: Colors.black87,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500),
-                                      )),
+                                      ),
+                                      ),
                                     ),
                                   )
                                 ],

@@ -14,7 +14,7 @@ class ProductList extends StatelessWidget {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
-          child: MyAppBar(),
+          child: MyAppBar(name: 'Luccelo',),
         ),
         body: Column(
           children: [

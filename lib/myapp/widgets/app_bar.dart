@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({super.key});
+  const MyAppBar({super.key, required this.name});
+   final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class MyAppBar extends StatelessWidget {
       elevation: 0,
       iconTheme: IconThemeData(color: Colors.white),
 
-      title: Text('App',style: TextStyle(color: Colors.white),),
+      title: Text(name,style: TextStyle(color: Colors.white),),
       centerTitle: true,
       actions: [
         IconButton(
