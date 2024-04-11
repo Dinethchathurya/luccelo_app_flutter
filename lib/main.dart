@@ -5,8 +5,12 @@ import 'package:luccelo_app/myapp/screen/authentication/login_page.dart';
 import 'package:luccelo_app/myapp/screen/authentication/register_page.dart';
 import 'package:luccelo_app/myapp/screen/contact_page.dart';
 import 'package:luccelo_app/myapp/screen/main_page.dart';
+import 'package:luccelo_app/myapp/screen/product_list.dart';
 
 import 'firebase_options.dart';
+import 'myapp/screen/cart_page.dart';
+import 'myapp/screen/checkout_page.dart';
+import 'myapp/screen/home.dart';
 import 'myapp/screen/oder_page.dart';
 
 void main() async {
@@ -25,7 +29,18 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/order',
+        theme: ThemeData(
+          brightness: Brightness.light,
+          colorScheme:  ColorScheme.light(
+            background: Color(0xFFf9f1f9),
+            onBackground: Color(0xFF171717),
+            primary: Color(0xFF962b9a),
+            secondary: Color(0xFF41468a),
+            onPrimary: Colors.white,
+            shadow: Color(0xFF2291fd),
+          ),
+        ),
+        initialRoute: '/checkoutPage',
         routes: {
           '/': (context) => LoginPage(),
           '/register': (context) => RegisterPage(),
@@ -33,6 +48,11 @@ class MyApp extends StatelessWidget {
           '/main': (context) => MainPage(),
           '/order': (context) => OrderPage(),
           '/samplePage': (context) => SampleHomePage(),
+          '/homePage': (context) => HomePage(),
+          '/productList': (context) => ProductList(),
+          '/cartPage': (context) => CartPage(),
+          '/checkoutPage': (context) => Checkout(),
+
         },
       ),
     );
