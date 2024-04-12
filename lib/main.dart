@@ -77,25 +77,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//
-// class test extends StatelessWidget {
-//   const test({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: TextButton(
-//           onPressed: () async {
-//             Order order = Order();
-//             String productId = "q23 2";
-//             String count = "u9u";
-//             await order.order();
-//             print("meka nm hari ");
-//           },
-//           child: Text('click'),
-//         ),
-//       ),
-//     );
-//   }
-// }

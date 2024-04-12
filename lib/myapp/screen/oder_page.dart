@@ -158,7 +158,10 @@ class _OrderPageState extends State<OrderPage> {
                       Order order = Order();
                       await order.order(
                           Provider.of<Count>(context, listen: false).quantity,
-                          widget.product_id);
+                          widget.product_id,
+                          _addressController,
+                          selectedShippingmethod,
+                          selectedpaymentMethod);
                       Navigator.pushNamed(context, '/success');
                     },
                     child: const Text(
