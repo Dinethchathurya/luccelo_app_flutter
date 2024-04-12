@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../database/count.dart';
 
 class CartListCard extends StatefulWidget {
   CartListCard({
@@ -16,28 +19,9 @@ class CartListCard extends StatefulWidget {
 }
 
 class _CartListCardState extends State<CartListCard> {
-  int _quantity = 1;
-
-  void _incrementQuantity() {
-    setState(() {
-      _quantity++;
-    });
-  }
-
-  void _decrementQuantity() {
-    if (_quantity > 1) {
-      setState(() {
-        _quantity--;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Add to Cart'),
-      // ),
       body: ListView.builder(
         itemCount: 1,
         itemBuilder: (context, index) {
@@ -52,7 +36,7 @@ class _CartListCardState extends State<CartListCard> {
                     color: Colors.black.withOpacity(0.02),
                     spreadRadius: 5,
                     blurRadius: 10,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -64,7 +48,6 @@ class _CartListCardState extends State<CartListCard> {
                       flex: 1,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        // crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image(
                             image: AssetImage(
@@ -87,14 +70,10 @@ class _CartListCardState extends State<CartListCard> {
                                 fontWeight: FontWeight.w500,
                                 color: Theme.of(context).colorScheme.primary),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Text(
-                              //   'Quantity:',
-                              //   style: TextStyle(fontSize: 16),
-                              // ),
                               Row(
                                 children: [
                                   Stack(
@@ -110,12 +89,14 @@ class _CartListCardState extends State<CartListCard> {
                                       ),
                                       IconButton(
                                         icon: Icon(Icons.remove),
-                                        onPressed: _decrementQuantity,
+                                        onPressed: Provider.of<Count>(context,
+                                                listen: false)
+                                            .decrementQuantity(),
                                       ),
                                     ],
                                   ),
                                   Text(
-                                    '$_quantity',
+                                    '${Provider.of<Count>(context).quantity}',
                                     style: TextStyle(fontSize: 17),
                                   ),
                                   Stack(
@@ -131,7 +112,9 @@ class _CartListCardState extends State<CartListCard> {
                                       ),
                                       IconButton(
                                         icon: Icon(Icons.add),
-                                        onPressed: _incrementQuantity,
+                                        onPressed: Provider.of<Count>(context,
+                                                listen: false)
+                                            .incrementQuantity(),
                                       ),
                                     ],
                                   ),
@@ -139,12 +122,12 @@ class _CartListCardState extends State<CartListCard> {
                               ),
                               Text(
                                 '${widget.price}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w600),
                               ),
                             ],
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           // ElevatedButton(
                           //   onPressed: () {
                           //     // Add to cart logic

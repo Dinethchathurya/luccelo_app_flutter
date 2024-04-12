@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:luccelo_app/database/count.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/cart_list_card.dart';
+import 'oder_page.dart';
 
 class CartPage extends StatelessWidget {
   CartPage(
@@ -17,6 +20,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var count = Provider.of<Count>(context).quantity;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
@@ -41,7 +45,16 @@ class CartPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              //
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderPage(
+                    product_id: productId,
+                    price: price,
+                    count: count,
+                  ),
+                ),
+              );
             },
             child: Text(
               'Proceed to Checkout',
