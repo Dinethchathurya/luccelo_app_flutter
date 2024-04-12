@@ -5,6 +5,7 @@ import '../../colors/appColors.dart';
 import '../../common/button/button.dart';
 import '../../common/circulat_shape/circular_design_container.dart';
 import '../../common/input_field.dart';
+import '../../database/contactus.dart';
 
 class ContactUsPage extends StatelessWidget {
   ContactUsPage({Key? key}) : super(key: key);
@@ -21,7 +22,6 @@ class ContactUsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.appBackgroundColor,
-
       body: SingleChildScrollView(
         child: CircularDesignContainer(
           pageTitle: 'Contact Us',
@@ -78,13 +78,14 @@ class ContactUsPage extends StatelessWidget {
                 SubmitButton(
                   text: 'SEND MESSAGE',
                   onTap: () {
-                    //
+                    Contactus contact = Contactus();
+                    contact.contactus(message, email, name);
                   },
                 ),
                 TextButton(
                   onPressed: () {
                     // Navigate back to the home page
-                    Navigator.pushNamed(context, '/samplePage');
+                    Navigator.pushNamed(context, '/home');
                   },
                   child: const Text(
                     'Back to Home page',

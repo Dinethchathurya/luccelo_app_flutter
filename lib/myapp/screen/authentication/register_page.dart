@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors/appColors.dart';
@@ -177,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () async {
                       await auth.createUserWithEmailAndPassword(
                           email: email, password: password);
-                      Navigator.pushNamed(context, '/samplePage');
+                      Navigator.pushNamed(context, '/homePage');
                     },
                     child: Text(
                       'Register', //this is text of buttton

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors/appColors.dart';
@@ -29,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
           password: _passwordController.text.trim());
 
       // Navigate to homepage after successful login
-      Navigator.pushNamed(context, '/samplePage');
+      Navigator.pushNamed(context, '/home');
     } catch (e) {
       // this is handle login error
       showDialog(
@@ -152,10 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 50,
                   child: ElevatedButton(
-
                     //elevated button is a type of a buttons.Icreate common button can use everywhere
                     style: ElevatedButton.styleFrom(
-
                       //style button
                       backgroundColor: const Color.fromARGB(255, 253, 176, 138),
                       shape: const RoundedRectangleBorder(
@@ -164,13 +161,12 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () async {
                       await auth.signInWithEmailAndPassword(
                           email: email, password: password);
-                      Navigator.pushNamed(context, '/samplePage');
+                      Navigator.pushNamed(context, '/homePage');
                     },
                     child: Text(
                       'Login', //this is text of buttton
                       style: const TextStyle(
                           fontSize: 15.0,
-
                           fontWeight: FontWeight.w500,
                           color: Colors.white),
                     ),
@@ -180,8 +176,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 10,
                 ),
                 GestureDetector(
-                    onTap: () async {
-                    Navigator.pushNamed(context, '/register');},
+                  onTap: () async {
+                    Navigator.pushNamed(context, '/register');
+                  },
                   child: Text(
                     'Register', //this is text of buttton
                     style: const TextStyle(
