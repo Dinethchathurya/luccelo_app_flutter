@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
                 shadow: Color(0xFF2291fd),
               ),
             ),
-            initialRoute: '/cartPage',
+            initialRoute: '/homePage',
             routes: {
               '/': (context) => LoginPage(),
               '/register': (context) => RegisterPage(),

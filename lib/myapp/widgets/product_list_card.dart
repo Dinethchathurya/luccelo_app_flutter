@@ -64,7 +64,7 @@ class ProductListCard extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Two Circle Dream Catcher',
+                                  '${data[index]['name']}',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
@@ -72,10 +72,10 @@ class ProductListCard extends StatelessWidget {
                                           .colorScheme
                                           .primary),
                                 ),
-                                const Padding(
+                                Padding(
                                   padding: EdgeInsets.symmetric(vertical: 8),
                                   child: Text(
-                                    'Rs 500',
+                                    '${data[index]['price']}',
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
