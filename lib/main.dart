@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
                 shadow: Color(0xFF2291fd),
               ),
             ),
-            initialRoute: '/homePage',
+            initialRoute: '/cartPage',
             routes: {
               '/': (context) => LoginPage(),
               '/register': (context) => RegisterPage(),
@@ -65,15 +65,6 @@ class MyApp extends StatelessWidget {
               '/order': (context) => OrderPage(),
               '/samplePage': (context) => SampleHomePage(),
               '/homePage': (context) => HomePage(),
-              // '/TeddyBearsProductList': (context) => ProductList(
-              //       child: Provider.of<TeddyBears>(context).getTeddyBears(),
-              //     ),
-              // '/GiftProductList': (context) => ProductList(
-              //       child: Provider.of<GiftPacks>(context).getGiftPacks(),
-              //     ),
-              // '/DreamCatcherProductList': (context) => ProductList(
-              //       child: Provider.of<DreamCatcher>(context).getDreamCatcher(),
-              //     ),
               '/cartPage': (context) => CartPage(),
               '/checkoutPage': (context) => Checkout(),
               '/test': (context) => test(),

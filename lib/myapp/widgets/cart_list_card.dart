@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CartListCard extends StatefulWidget {
   @override
@@ -31,8 +29,8 @@ class _CartListCardState extends State<CartListCard> {
       //   title: Text('Add to Cart'),
       // ),
       body: ListView.builder(
-          itemCount: 3,
-          itemBuilder: (context, index){
+          itemCount: 1,
+          itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               child: Container(
@@ -67,7 +65,6 @@ class _CartListCardState extends State<CartListCard> {
                           ],
                         ),
                       ),
-
                       Expanded(
                         flex: 3,
                         child: Column(
@@ -93,15 +90,12 @@ class _CartListCardState extends State<CartListCard> {
                                     Stack(
                                       alignment: Alignment.center,
                                       children: [
-
                                         Container(
                                           width: 25, // set the width
                                           height: 25,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: Colors.red.withOpacity(0.2),
-
-
                                           ),
                                         ),
                                         IconButton(
@@ -117,15 +111,13 @@ class _CartListCardState extends State<CartListCard> {
                                     Stack(
                                       alignment: Alignment.center,
                                       children: [
-
                                         Container(
                                           width: 25, // set the width
                                           height: 25,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color: Colors.green.withOpacity(0.2),
-
-
+                                            color:
+                                                Colors.green.withOpacity(0.2),
                                           ),
                                         ),
                                         IconButton(
@@ -134,15 +126,14 @@ class _CartListCardState extends State<CartListCard> {
                                         ),
                                       ],
                                     ),
-
                                   ],
                                 ),
                                 Text(
                                   'Rs. 3000',
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
                                 ),
-                        
-                        
                               ],
                             ),
                             SizedBox(height: 16),
@@ -160,12 +151,7 @@ class _CartListCardState extends State<CartListCard> {
                 ),
               ),
             );
-          }
-
-
-      ),
-
-
+          }),
     );
   }
 }

@@ -84,7 +84,20 @@ class ProductListCard extends StatelessWidget {
                                   ),
                                 ),
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //     builder: (context) => ProductListCard(
+                                    //       data: Provider.of<TeddyBears>(context)
+                                    //           .allData,
+                                    //       future:
+                                    //           Provider.of<TeddyBears>(context)
+                                    //               .getTeddyBears(),
+                                    //     ),
+                                    //   ),
+                                    // );
+                                  },
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: Colors.yellow,
