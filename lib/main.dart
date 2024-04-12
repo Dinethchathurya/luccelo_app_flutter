@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
             shadow: Color(0xFF2291fd),
           ),
         ),
-        initialRoute: '/checkoutPage',
+        initialRoute: '/',
         routes: {
           '/': (context) => LoginPage(),
           '/register': (context) => RegisterPage(),
