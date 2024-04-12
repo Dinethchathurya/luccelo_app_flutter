@@ -1,11 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:luccelo_app/database/getDreamCatcher.dart';
+import 'package:luccelo_app/database/getGiftPacks.dart';
+import 'package:luccelo_app/myapp/screen/product_list.dart';
 import 'package:luccelo_app/myapp/widgets/app_bar.dart';
+import 'package:provider/provider.dart';
 
 import '../../colors/appColors.dart';
 import '../../common/circulat_shape/circular_container.dart';
+import '../../database/getTeadyBears.dart';
 import '../widgets/my_drawer.dart';
+import '../widgets/product_list_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,7 +21,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
-        child: MyAppBar(name: 'Luccelo',),
+        child: MyAppBar(
+          name: 'Luccelo',
+        ),
       ),
       drawer: MyDrawer(),
       body: SafeArea(
@@ -45,8 +51,8 @@ class HomePage extends StatelessWidget {
                       height: 15,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -91,28 +97,47 @@ class HomePage extends StatelessWidget {
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.w700,
-                                        color: Theme.of(context).colorScheme.primary),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   GestureDetector(
-                                    onTap: (){},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ProductList(
+                                            child: ProductListCard(
+                                              future: Provider.of<DreamCatcher>(
+                                                      context)
+                                                  .getDreamCatcher(),
+                                              data: Provider.of<DreamCatcher>(
+                                                      context)
+                                                  .allData,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Colors.yellow,
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                       ),
                                       height: 40,
                                       width: 120,
                                       child: Center(
-                                          child: Text(
-                                        'View',
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500),
-                                      ),
+                                        child: Text(
+                                          'View',
+                                          style: TextStyle(
+                                              color: Colors.black87,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500),
+                                        ),
                                       ),
                                     ),
                                   )
@@ -124,8 +149,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -166,32 +191,52 @@ class HomePage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Teady Bears',
+                                    'Teddy Bears',
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.w700,
-                                        color: Theme.of(context).colorScheme.primary),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   GestureDetector(
-                                    onTap: (){},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ProductList(
+                                            child: ProductListCard(
+                                              future: Provider.of<TeddyBears>(
+                                                      context)
+                                                  .getTeddyBears(),
+                                              data: Provider.of<TeddyBears>(
+                                                      context)
+                                                  .allData,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Colors.yellow,
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                       ),
                                       height: 40,
                                       width: 120,
                                       child: Center(
-                                          child: Text(
-                                        'View',
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500),
-                                      )),
+                                        child: Text(
+                                          'View',
+                                          style: TextStyle(
+                                              color: Colors.black87,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
                                     ),
                                   )
                                 ],
@@ -202,8 +247,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 10),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -251,17 +296,36 @@ class HomePage extends StatelessWidget {
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.w700,
-                                        color: Theme.of(context).colorScheme.primary),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   GestureDetector(
-                                    onTap: (){},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ProductList(
+                                            child: ProductListCard(
+                                              future: Provider.of<GiftPacks>(
+                                                      context)
+                                                  .getGiftPacks(),
+                                              data: Provider.of<GiftPacks>(
+                                                      context)
+                                                  .allData,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Colors.yellow,
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
                                       ),
                                       height: 40,
                                       width: 120,

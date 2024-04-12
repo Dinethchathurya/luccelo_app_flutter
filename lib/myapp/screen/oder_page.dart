@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../colors/appColors.dart';
 import '../../common/circulat_shape/circular_design_container.dart';
 import '../../common/dropDownButton/dropdown.dart';
 import '../../common/text_form_colum/text_field_coulum.dart';
+import '../../database/count.dart';
+import '../../database/order.dart';
 
 class OrderPage extends StatefulWidget {
-  final String? email; // Email of the logged-in user
+  OrderPage(
+      {Key? key,
+      this.email,
+      required this.product_id,
+      required this.price,
+      required this.count})
+      : super(key: key);
 
-  const OrderPage({Key? key, this.email}) : super(key: key);
+  final String? email; // Email of the logged-in user
+  var price;
+  var product_id;
+  var count;
 
   @override
   State<OrderPage> createState() => _OrderPageState();
@@ -17,8 +29,6 @@ class OrderPage extends StatefulWidget {
 class _OrderPageState extends State<OrderPage> {
   /*backend part for contact us page.I get user email from login data and set contact us page to auto fill*/
   final _addressController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _messageController = TextEditingController();
 
   // List for pickup method
   List<String> pickupMethod = [
@@ -40,7 +50,7 @@ class _OrderPageState extends State<OrderPage> {
   Widget build(BuildContext context) {
     final mediaqueryWidth = MediaQuery.of(context).size.width;
     final mediaqueryHeight = MediaQuery.of(context).size.height;
-    double price = 6000.0;
+    //  double price = 6000.0;
 
     return Scaffold(
       appBar: AppBar(
@@ -121,7 +131,7 @@ class _OrderPageState extends State<OrderPage> {
                         ),
                       ),
                       Text(
-                        'Rs $price',
+                        'Rs ${widget.price}',
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w800,
@@ -139,9 +149,18 @@ class _OrderPageState extends State<OrderPage> {
                       //style button
                       backgroundColor: const Color(0xFF404690),
                       shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      Order order = Order();
+                      await order.order(
+                          Provider.of<Count>(context, listen: false).quantity,
+                          widget.product_id);
+                      Navigator.pushNamed(context, '/success');
+                    },
                     child: const Text(
                       'Place Order', //this is text of buttton
                       style: TextStyle(
