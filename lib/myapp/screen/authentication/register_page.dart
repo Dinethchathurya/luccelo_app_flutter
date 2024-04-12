@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors/appColors.dart';
@@ -94,11 +95,17 @@ class _RegisterPageState extends State<RegisterPage> {
         child: CircularDesignContainer(
           pageTitle: 'Register Here',
           pageSubTitle: 'Register to join with us',
-          formHeight: mediaqueryHeight * .8,
+          formHeight: mediaqueryHeight * .45,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Column(
               children: [
+                SizedBox(
+                  height: 20.0,
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -154,27 +161,31 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 30.0,
                 ),
-                ElevatedButton(
-                  //elevated button is a type of a buttons.Icreate common button can use everywhere
-                  style: ElevatedButton.styleFrom(
-                    //style button
-                    backgroundColor: const Color.fromARGB(255, 253, 176, 138),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                  ),
-                  onPressed: () async {
-                    await auth.createUserWithEmailAndPassword(
-                        email: email, password: password);
-                    Navigator.pushNamed(context, '/samplePage');
-                  },
-                  child: Text(
-                    'Register', //this is text of buttton
-                    style: const TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
+                SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    //elevated button is a type of a buttons.Icreate common button can use everywhere
+                    style: ElevatedButton.styleFrom(
+                      //style button
+                      backgroundColor: const Color.fromARGB(255, 253, 176, 138),
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(100))),
+                    ),
+                    onPressed: () async {
+                      await auth.createUserWithEmailAndPassword(
+                          email: email, password: password);
+                      Navigator.pushNamed(context, '/samplePage');
+                    },
+                    child: Text(
+                      'Register', //this is text of buttton
+                      style: const TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
               ],
