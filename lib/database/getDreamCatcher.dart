@@ -6,6 +6,7 @@ class DreamCatcher extends ChangeNotifier {
   Map<int, dynamic> allData = {};
 
   getDreamCatcher() async {
+    print('DreamCatcher');
     try {
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection('Dream Catcher');

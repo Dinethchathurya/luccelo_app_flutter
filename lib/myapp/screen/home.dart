@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:luccelo_app/database/getDreamCatcher.dart';
+import 'package:luccelo_app/database/getGiftPacks.dart';
 import 'package:luccelo_app/myapp/screen/product_list.dart';
 import 'package:luccelo_app/myapp/widgets/app_bar.dart';
 import 'package:provider/provider.dart';
@@ -109,10 +111,12 @@ class HomePage extends StatelessWidget {
                                         MaterialPageRoute(
                                           builder: (context) => ProductList(
                                             child: ProductListCard(
-                                              future: Provider.of<TeddyBears>(
+                                              future: Provider.of<DreamCatcher>(
                                                       context)
-                                                  .getTeddyBears(),
-                                              data: null,
+                                                  .getDreamCatcher(),
+                                              data: Provider.of<DreamCatcher>(
+                                                      context)
+                                                  .allData,
                                             ),
                                           ),
                                         ),
@@ -208,7 +212,9 @@ class HomePage extends StatelessWidget {
                                               future: Provider.of<TeddyBears>(
                                                       context)
                                                   .getTeddyBears(),
-                                              data: null,
+                                              data: Provider.of<TeddyBears>(
+                                                      context)
+                                                  .allData,
                                             ),
                                           ),
                                         ),
@@ -223,13 +229,14 @@ class HomePage extends StatelessWidget {
                                       height: 40,
                                       width: 120,
                                       child: Center(
-                                          child: Text(
-                                        'View',
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500),
-                                      )),
+                                        child: Text(
+                                          'View',
+                                          style: TextStyle(
+                                              color: Colors.black87,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
                                     ),
                                   )
                                 ],
@@ -303,10 +310,12 @@ class HomePage extends StatelessWidget {
                                         MaterialPageRoute(
                                           builder: (context) => ProductList(
                                             child: ProductListCard(
-                                              future: Provider.of<TeddyBears>(
+                                              future: Provider.of<GiftPacks>(
                                                       context)
-                                                  .getTeddyBears(),
-                                              data: null,
+                                                  .getGiftPacks(),
+                                              data: Provider.of<GiftPacks>(
+                                                      context)
+                                                  .allData,
                                             ),
                                           ),
                                         ),

@@ -6,6 +6,7 @@ class TeddyBears extends ChangeNotifier {
   Map<int, dynamic> allData = {};
 
   getTeddyBears() async {
+    print('deddy');
     try {
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection('Teady Bears');
@@ -14,9 +15,7 @@ class TeddyBears extends ChangeNotifier {
       querySnapshot.docs.asMap().forEach((index, doc) {
         allData[index] = doc.data();
       });
-      // allData.forEach((index, data) {
-      //   print('$index: ${data['image']}');
-      // });
+      print(allData[0]['image']);
     } catch (e) {
       print('Error getting documents: $e');
       return null;

@@ -6,6 +6,7 @@ class GiftPacks extends ChangeNotifier {
   Map<int, dynamic> allData = {};
 
   getGiftPacks() async {
+    print('gift');
     try {
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection('Gift Packs');

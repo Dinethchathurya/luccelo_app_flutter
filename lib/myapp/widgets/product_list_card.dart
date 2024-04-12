@@ -4,6 +4,7 @@ class ProductListCard extends StatelessWidget {
   ProductListCard({super.key, required this.future, required this.data});
   var future;
   var data;
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -16,7 +17,7 @@ class ProductListCard extends StatelessWidget {
             return Text('Error: ${snapshot.error}');
           } else {
             return ListView.builder(
-              itemCount: 10,
+              itemCount: data.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding:
@@ -39,14 +40,15 @@ class ProductListCard extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Expanded(
+                        Expanded(
                           flex: 2,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image(
                                 image: AssetImage(
-                                  'assets/dream.png',
+                                  '${data[index]['image']}',
+                                  // 'assets/dream.png',
                                 ),
                                 height: 100,
                               ),
