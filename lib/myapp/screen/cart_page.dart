@@ -4,7 +4,16 @@ import '../widgets/app_bar.dart';
 import '../widgets/cart_list_card.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  CartPage(
+      {super.key,
+      required this.name,
+      required this.price,
+      required this.image,
+      required this.productId});
+  var image;
+  var name;
+  var price;
+  var productId;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +30,18 @@ class CartPage extends StatelessWidget {
             height: 20,
           ),
           Expanded(
-            child: CartListCard(),
+            child: CartListCard(
+              image: image,
+              name: name,
+              price: price,
+            ),
           ),
           SizedBox(
             height: 10,
           ),
           ElevatedButton(
             onPressed: () {
-              // Button pressed action
+              //
             },
             child: Text(
               'Proceed to Checkout',

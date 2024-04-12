@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screen/cart_page.dart';
+
 class ProductListCard extends StatelessWidget {
   ProductListCard({super.key, required this.future, required this.data});
   var future;
@@ -85,18 +87,17 @@ class ProductListCard extends StatelessWidget {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    // Navigator.push(
-                                    //   context,
-                                    //   MaterialPageRoute(
-                                    //     builder: (context) => ProductListCard(
-                                    //       data: Provider.of<TeddyBears>(context)
-                                    //           .allData,
-                                    //       future:
-                                    //           Provider.of<TeddyBears>(context)
-                                    //               .getTeddyBears(),
-                                    //     ),
-                                    //   ),
-                                    // );
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => CartPage(
+                                          image: data[index]['image'],
+                                          name: data[index]['name'],
+                                          price: data[index]['price'],
+                                          productId: data[index]['product_id'],
+                                        ),
+                                      ),
+                                    );
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(

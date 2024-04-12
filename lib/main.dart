@@ -11,7 +11,6 @@ import 'package:provider/provider.dart';
 import 'database/getDreamCatcher.dart';
 import 'database/getGiftPacks.dart';
 import 'firebase_options.dart';
-import 'myapp/screen/cart_page.dart';
 import 'myapp/screen/checkout_page.dart';
 import 'myapp/screen/home.dart';
 import 'myapp/screen/oder_page.dart';
@@ -21,7 +20,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -65,7 +64,6 @@ class MyApp extends StatelessWidget {
               '/order': (context) => OrderPage(),
               '/samplePage': (context) => SampleHomePage(),
               '/homePage': (context) => HomePage(),
-              '/cartPage': (context) => CartPage(),
               '/checkoutPage': (context) => Checkout(),
               '/test': (context) => test(),
             },
