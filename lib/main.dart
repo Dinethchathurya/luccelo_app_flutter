@@ -14,6 +14,7 @@ import 'database/getDreamCatcher.dart';
 import 'database/getGiftPacks.dart';
 import 'firebase_options.dart';
 import 'myapp/screen/checkout_page.dart';
+import 'myapp/screen/customizePage.dart';
 import 'myapp/screen/home.dart';
 
 void main() async {
@@ -69,7 +70,8 @@ class MyApp extends StatelessWidget {
               '/homePage': (context) => HomePage(),
               '/checkoutPage': (context) => Checkout(),
               '/success': (context) => Success(),
-              // '/test': (context) => test(),
+              '/cutomize': (context) => CoustomizePage(),
+              //   '/test': (context) => test(),
             },
           ),
         );

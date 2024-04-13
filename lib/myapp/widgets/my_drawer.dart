@@ -7,7 +7,8 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Drawer(
+    var auth = FirebaseAuth.instance;
+    return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
@@ -46,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                           fontSize: 16),
                     ),
                     Text(
-                      "User Email",
+                      "${auth.currentUser?.email}",
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.onBackground,
                           fontWeight: FontWeight.w600,
@@ -64,44 +65,49 @@ class MyDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-
                     children: [
                       ListTile(
                         leading: Icon(Icons.home),
                         title: Text("Home"),
-                        onTap: (){
+                        onTap: () {
                           Navigator.pop(context); // Close the drawer
-
-
                         },
                       ),
-
-
-
                       ListTile(
                         leading: Icon(Icons.face),
-                        title: Text("Profile"),
-                        onTap: (){
-
-
+                        title: Text("Contact Us"),
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.pushNamed(context, '/contactPage');
                         },
                       ),
-
+                      ListTile(
+                        leading: Icon(Icons.face),
+                        title: Text("Customize"),
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.pushNamed(context, '/cutomize');
+                        },
+                      ),
                     ],
                   ),
                   ListTile(
-                    leading: Icon(Icons.logout, color: Colors.red,),
-                    title: Text("Log Out", style: TextStyle(color: Colors.red),),
+                    leading: Icon(
+                      Icons.logout,
+                      color: Colors.red,
+                    ),
+                    title: Text(
+                      "Log Out",
+                      style: TextStyle(color: Colors.red),
+                    ),
                     onTap: () {
                       FirebaseAuth.instance.signOut();
                     },
-
                   ),
                 ],
               ),
             ),
           ),
-
         ],
       ),
     );

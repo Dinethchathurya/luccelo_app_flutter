@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../colors/appColors.dart';
@@ -10,13 +9,13 @@ import '../../database/contactus.dart';
 class ContactUsPage extends StatelessWidget {
   ContactUsPage({Key? key}) : super(key: key);
 
-  late String name;
-  late String enterEmail;
-  late String message;
+  late String name = "nithu";
+  late String enterEmail = "nithu123@gmil.com";
+  late String message = "helo kjjkh";
+  late String email = "nithu123@gmil.com";
 
   @override
   Widget build(BuildContext context) {
-    final String? email = FirebaseAuth.instance.currentUser?.email;
     final mediaqueryWidth = MediaQuery.of(context).size.width;
     final mediaqueryHeight = MediaQuery.of(context).size.height;
 
@@ -51,6 +50,7 @@ class ContactUsPage extends StatelessWidget {
                     prefixIcon: Icon(Icons.text_fields),
                     onChanged: (String value) {
                       name = value;
+                      print(name);
                     }),
                 SizedBox(
                   height: mediaqueryWidth * .04,
@@ -61,6 +61,7 @@ class ContactUsPage extends StatelessWidget {
                     prefixIcon: Icon(Icons.email),
                     onChanged: (String value) {
                       enterEmail = value;
+                      print(enterEmail);
                     }),
                 SizedBox(
                   height: mediaqueryWidth * .04,
@@ -71,6 +72,7 @@ class ContactUsPage extends StatelessWidget {
                     prefixIcon: Icon(Icons.message),
                     onChanged: (String value) {
                       message = value;
+                      print(message);
                     }),
                 SizedBox(
                   height: mediaqueryWidth * .04,

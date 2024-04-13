@@ -6,7 +6,7 @@ class TeddyBears extends ChangeNotifier {
   Map<int, dynamic> allData = {};
 
   getTeddyBears() async {
-    print('deddy');
+    //  print('deddy');
     try {
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection('Teady Bears');

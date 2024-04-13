@@ -6,7 +6,7 @@ class DreamCatcher extends ChangeNotifier {
   Map<int, dynamic> allData = {};
 
   getDreamCatcher() async {
-    print('DreamCatcher');
+    // print('DreamCatcher');
     try {
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection('Dream Catcher');
@@ -15,9 +15,9 @@ class DreamCatcher extends ChangeNotifier {
       querySnapshot.docs.asMap().forEach((index, doc) {
         allData[index] = doc.data();
       });
-      allData.forEach((index, data) {
-        print('$index: ${data['image']}');
-      });
+      // allData.forEach((index, data) {
+      //   print('$index: ${data['image']}');
+      // });
     } catch (e) {
       print('Error getting documents: $e');
       return null;
